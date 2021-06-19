@@ -65,24 +65,70 @@
 #     print(f"Hello {formattedName}!")
 
 # Albums management
-def makeAlbum(artist, albumTitle, numberOfSongs=''):
-    album = {'artist': artist, 'albumName': albumTitle}
-    if numberOfSongs:
-        album['numberOfSongs'] = numberOfSongs
-        formattedAlbum = f"\n{artist} \n{albumTitle} \n{numberOfSongs}"
+# def makeAlbum(artist, albumTitle, numberOfSongs=None):
+#     album = {'artist': artist, 'albumName': albumTitle}
+#     if numberOfSongs:
+#         album['numberOfSongs'] = numberOfSongs
+#         formattedAlbum = f"Artist: {artist} \nTitle: {albumTitle} \nNumber of songs:{numberOfSongs}"
+#     else:
+#         formattedAlbum = f"Artist: {artist} \nTitle: {albumTitle}"
+#     return formattedAlbum
 
-    else:
-        formattedAlbum = f"\n{artist} \n{albumTitle}"
-    return formattedAlbum
+
+# makingNewAlbum = True
+# while makingNewAlbum:
+#     artist = input("Enter artist name: ")
+#     if artist == 'q':
+#         break
+#     albumTitle = input("Enter album title: ")
+#     if albumTitle == 'q':
+#         break
+#     newalbum = makeAlbum(artist, albumTitle)
+#     print(newalbum)
+
+# Passing a List
+# def greetingUsers(names):
+#     for name in names:
+#         msg = f"Hello {name.title()}"
+#         print(msg)
 
 
-makingNewAlbum = True
-while makingNewAlbum:
-    artist = input("Enter artist name: ")
-    if artist == 'q':
-        break
-    albumTitle = input("Enter album title: ")
-    if albumTitle == 'q':
-        break
-    newalbum = makeAlbum(artist, albumTitle)
-    print(newalbum)
+# userNames = ['clover', 'henry', 'bimbim']
+# greetingUsers(userNames)
+
+# Modifying a List in a Function
+# unprintedDesigns = ['phone case', 'robot pendant', 'dodecahedron']
+# completedModels = []
+# Simulating printing each designs until none are left
+# Move each designs into completedModels after printing
+# while unprintedDesigns:
+#     currentDesign = unprintedDesigns.pop()
+#     print(f"Printing model: {currentDesign}")
+#     completedModels.append(currentDesign)
+# # Display all completed models
+# print("\nThe following models have been printed:")
+# for completedModel in completedModels:
+#     print(completedModel.title())
+
+# Reorganize above code by writing 2 functions
+
+
+# def printModels(unprintedDesigns, completedModels):
+#     while unprintedDesigns:
+#         currentDesign = unprintedDesigns.pop()
+#         print(f"Printing model: {currentDesign}")
+#         completedModels.append(currentDesign)
+
+
+# def showCompletedModels(completedModels):
+#     print("\nThe following models have been printed:")
+#     for completedModel in completedModels:
+#         print(completedModel.title())
+
+# unprintedDesigns = ['phone case', 'robot pendant', 'dodecahedron']
+# completedModels = []
+# # adding [:] to prevent a function from modifying a list
+# printModels(unprintedDesigns[:], completedModels)
+# showCompletedModels(completedModels)
+
+# Passing an Arbitrary Number of Arguments
