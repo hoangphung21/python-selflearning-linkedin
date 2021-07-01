@@ -14,3 +14,7 @@ class Dog:
 
 my_dog = Dog("Willy", 4)
 print(f"My dog's name is {my_dog.name}")
+print(f"He is {my_dog.age} years old")
+
+my_dog.sit()
+my_dog.roll_over()
