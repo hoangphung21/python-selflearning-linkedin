@@ -15,13 +15,23 @@ class Car:
 
     def update_odemeter(self, mileage):
         # modifying an attribute's value through a methodß
-        self.odemeter_reading = mileage
+        if mileage >= self.odemeter_reading:
+            self.odemeter_reading = mileage
+        else:
+            print("You cant roll back an odometer")
+
+    def increment_odometer(self, miles):
+        self.odemeter_reading += miles
+
+# Inheritance; init method in a child class
 
 
-my_new_car = Car('audi', 'a4', 2019)
-print(my_new_car.get_descretive_name())
-my_new_car.read_odometer()
+class ElectricCar(Car):
+    """Represnet aspects of a car, specific to electric vehicles"""
 
-# # modifying an attribue's value directly
-my_new_car.update_odemeter(23)
-my_new_car.read_odometer()
+    def __init__(self, make, model, year):
+        super().__init__(make, model, year)
+
+
+my_tesla = ElectricCar('tesla', 'model S', 2019)
+print(my_tesla.get_descretive_name())
