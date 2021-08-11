@@ -26,12 +26,33 @@ class Car:
 # Inheritance; init method in a child class
 
 
+class Battery:
+    """A simple attemp to model a battery for an electric car"""
+
+    def __init__(self, battery_size=75):
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        print(f"This car has a {self.battery_size}-kWh battery.")
+
+    def get_range(self):
+        if self.battery_size == 75:
+            range = 260
+        elif self.battery_size == 100:
+            range = 350
+        print(f"This car can go about {range} in full charge")
+
+
 class ElectricCar(Car):
     """Represnet aspects of a car, specific to electric vehicles"""
+    """super() is used to call a method from parent class"""
 
     def __init__(self, make, model, year):
         super().__init__(make, model, year)
+        self.battery = Battery()
 
 
-my_tesla = ElectricCar('tesla', 'model S', 2019)
-print(my_tesla.get_descretive_name())
+# my_tesla = ElectricCar('tesla', 'model S', 2019)
+# print(my_tesla.get_descretive_name())
+# my_tesla.battery.describe_battery()
+# my_tesla.battery.get_range()
